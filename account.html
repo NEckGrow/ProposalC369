@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Information - SmartHub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        .account-details {
+            margin-top: 20px;
+        }
+        .account-details h3 {
+            display: flex;
+            margin-bottom: 0;
+        }
+        .account-details .info {
+            margin-left: 10px;
+        }
+        .account-details .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .account-details .col-md-6 {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 20px;
+        }
+        .account-details input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .text-center button {
+            margin-top: 20px;
+        }
+        .btn .btn-primary {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/photos/Brand.png" alt="" id="brand">
+        </div>
+        <div class="navbar-nav">
+            <div class="row">
+                <a class="nav-item nav-link" href="/index2.html"><b>Home </b></a>
+                <a class="nav-item nav-link" href="/support.html"><b>Support </b></a>
+                <a class="nav-item nav-link" href="/wallet.html"><b>Wallet </b></a>
+                <a class="nav-item nav-link" href="/History.html"><b>History </b></a>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="row">
+                <a class="nav-item nav-link" href="/account.html"><b>Account</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron account-details">
+        <div class="text-center">
+            <h1 style="font-size: 75px;">Account Details<hr><br></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>First Name:</h3>
+                <span class="info" id="first-name">John</span>
+                <h3>Last Name:</h3>
+                <span class="info" id="last-name">Alexander</span>
+                <h3>Email Address:</h3>
+                <span class="info" id="email">john.alex@fmale.com</span>
+                <h3>Phone Number:</h3>
+                <span class="info" id="phone-number">12337890</span>
+                <h3>Nationality:</h3>
+                <span class="info" id="nationality">Singapore</span>
+                <h3>Identification Number:</h3>
+                <span class="info" id="identification-number">A1234567C</span>
+            </div>
+            <div class="col-md-6">
+                <h3>Address:</h3>
+                <span class="info" id="address">123 Jalan IDK</span>
+                <h3>City:</h3>
+                <span class="info" id="city">Singapore</span>
+                <h3>State/Province:</h3>
+                <span class="info" id="state">Singapore</span>
+                <h3>Zip/Postal Code:</h3>
+                <span class="info" id="zip-code">123455</span>
+                <h3>Password:</h3>
+                <span class="info" id="password">********</span>
+                <h3>Confirm Password:</h3>
+                <span class="info" id="confirm-password">********</span>
+            </div>
+        </div>
+        <div class="row ">
+            <button class="btn btn-primary" onclick="enableEditing()">Change</button>
+            <button class="btn btn-primary" onclick="confirmChanges()">Confirm</button>
+        </div>
+        <hr>
+        <div>
+            <a href="index.html"><button class="btn btn-danger" onclick="logout()">Logout</button></a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function enableEditing() {
+            const fields = [
+                'first-name', 'last-name', 'email', 'phone-number', 
+                'nationality', 'identification-number', 'address', 
+                'city', 'state', 'zip-code', 'password', 'confirm-password'
+            ];
+
+            fields.forEach(field => {
+                const element = document.getElementById(field);
+                const value = element.textContent.trim();
+                element.innerHTML = `<input type="text" class="form-control" value="${value}">`;
+            });
+        }
+
+        function confirmChanges() {
+            const fields = [
+                'first-name', 'last-name', 'email', 'phone-number', 
+                'nationality', 'identification-number', 'address', 
+                'city', 'state', 'zip-code', 'password', 'confirm-password'
+            ];
+
+            fields.forEach(field => {
+                const element = document.getElementById(field);
+                const input = element.querySelector('input');
+                if (input) {
+                    element.textContent = input.value.trim();
+                }
+            });
+        }
+
+        function logout() {
+            alert("Are you sure you want to logout?");
+        }
+    </script>
+</body>
+</html>

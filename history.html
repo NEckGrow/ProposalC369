@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - SmartHub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        .history-table {
+            margin-top: 20px;
+        }
+        .history-table th, .history-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/photos/Brand.png" alt="" id="brand">
+        </div>
+        <div class="navbar-nav">
+            <div class="row">
+                <a class="nav-item nav-link" href="/index2.html"><b>Home </b></a>
+                <a class="nav-item nav-link" href="/support.html"><b>Support </b></a>
+                <a class="nav-item nav-link" href="/wallet.html"><b>Wallet </b></a>
+                <a class="nav-item nav-link" href="/History.html"><b>History </b></a>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="row">
+                <a class="nav-item nav-link" href="/account.html"><b>Account</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Transaction History</h1>
+            <table class="table table-bordered table-hover history-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Date</th>
+                        <th>Person</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-07-01</td>
+                        <td>Jane Smith</td>
+                        <td>$100.00</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>2023-06-25</td>
+                        <td>Bob Johnson</td>
+                        <td>$50.00</td>
+                        <td>Received</td>
+                    </tr>
+                    <tr>
+                        <td>2023-06-15</td>
+                        <td>Mary Brown</td>
+                        <td>$200.00</td>
+                        <td>Sent</td>
+                    </tr>
+                    <tr>
+                        <td>2023-06-10</td>
+                        <td>Tom Wilson</td>
+                        <td>$150.00</td>
+                        <td>Received</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

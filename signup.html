@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SmartHub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/photos/Brand.png" alt="" id="brand">
+        </div>
+        <div class="navbar-nav">
+            <div class="row">
+                <a class="nav-item nav-link" href="/index.html"><b>Home</b></a>
+                <a class="nav-item nav-link" href="/support2.html"><b>Support</b></a>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="row">
+                <a class="nav-item nav-link" href="/signup.html"><b>Sign Up</b></a>
+                <a class="nav-item nav-link" href="/login.html"><b>Login</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Sign Up</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="/photos/Brand.png" alt="" style="width: 100px; margin-bottom: 20px;">
+                        <form action="confirmation.html" method="GET">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Enter first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Enter last name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="Enter phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nationality">Nationality</label>
+                                <select class="form-control" id="nationality" name="nationality" required>
+                                    <option value="" disabled selected>Select your nationality</option>
+                                    <option value="american">American</option>
+                                    <option value="british">British</option>
+                                    <option value="canadian">Canadian</option>
+                                    <option value="chinese">Chinese</option>
+                                    <option value="french">French</option>
+                                    <option value="german">German</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="singaporean">Singaporean</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="identification-number">Identification Number</label>
+                                <input type="text" class="form-control" id="identification-number" name="identification-number" placeholder="Enter ID number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Province</label>
+                                <input type="text" class="form-control" id="state" name="state" placeholder="Enter your state/province" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip-code">Zip/Postal Code</label>
+                                <input type="text" class="form-control" id="zip-code" name="zip-code" placeholder="Enter zip/postal code" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="/signup2.html">Use Singpass instead</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

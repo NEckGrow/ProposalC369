@@ -1,0 +1,88 @@
+/* styles.css */
+#brand {
+    width: 5em; /* Adjust logo size */
+}
+
+nav {
+    background-color: white;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;  /* Adjust spacing between items */
+    margin-right: 20px; /* Adjust spacing between items */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;   /* Increase font size */
+    padding: 10px 20px; /* Adjust padding */
+    color: black; /* Change text color to black */
+    
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+
+body {
+    background-color: rgb(146, 146, 146);
+    font-family: Microgramma;
+    
+}
+
+/* Box styles */
+.box {
+    border-radius: 5%; /* Border radius */
+    background-color: rgb(41, 41, 41); /* Background color */
+    padding: 20px; /* Padding inside the box */
+    margin: 100px 0; /* Margin around the box */
+    color: white; /* Default text color in the box */
+    font-size: 175%; /* Increase overall font size by 75% */
+}
+
+/* Box content styles */
+.box-content {
+    display: flex; 
+    align-items: center; 
+}
+.box-text {
+    flex: 1; /* Allow text to take available space */
+}
+
+.box-image {
+    margin-left: 20px; /* Add spacing between text and image */
+    margin-top: 35px;
+    
+}
+
+.box h1 {
+    font-size: 200%; /* Increase font size by 75% (from 24px to 42px) */
+}
+
+.box h2 {
+    color: white; /* White color for h2 text */
+    font-size: 200%; /* Increase font size by 75% (from 20px to 35px) */
+}
+
+.box .highlight {
+    color: rgb(49, 199, 248); /* Light blue color for highlighted text */
+    text-decoration: underline; /* Underline the highlighted text */
+}
+
+section {
+    background-color: white;
+    color: black;
+
+}
+
+.jumbotron {
+    background-color: white;
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

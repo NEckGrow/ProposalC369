@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - SmartHub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        .col {
+            height: 700px;
+            border-radius: 5%;
+            background-color: white;
+            margin-top: 100px;
+        }
+
+        #img1 {
+            width: 150px;
+            margin-top: 25px;
+            margin-left: 50px;
+            
+        }
+
+        #img2{
+            width: 150px;
+            margin-top: 25px;
+            margin-left: 50px;
+        }
+
+        #img1:hover {
+            border: solid black;
+            border-radius: 5%;
+        }
+
+
+        .box-text {
+            margin-left: 40px;
+            margin-top: 60px;
+        }
+
+        #row2 {
+            margin-top: 100px;
+        }
+
+        #qr {
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/photos/Brand.png" alt="" id="brand">
+        </div>
+        <div class="navbar-nav">
+            <div class="row">
+                <a class="nav-item nav-link" href="/index2.html"><b>Home </b></a>
+                <a class="nav-item nav-link" href="/support.html"><b>Support </b></a>
+                <a class="nav-item nav-link" href="/wallet.html"><b>Wallet </b></a>
+                <a class="nav-item nav-link" href="/History.html"><b>History </b></a>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="row">
+                <a class="nav-item nav-link" href="/account.html"><b>Account</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col">
+            <div>
+                <img src="/photos/Brand.png" alt="" id="img2" >
+            </div>
+            <div class="box-text">
+                <h1>SGD $ <span id="balance"></span></h1>
+            </div>
+
+            <div class="row" id="row2">
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" onclick="scrollToSendMoney()"><img src="/photos/Send.png" alt="" id="img1"></a>
+                    <h1 style="margin-top: 5px; margin-left: 80px;">Pay</h1>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" onclick="scrolltoTopUp()"><img src="/photos/Top-up.png" alt="" id="img1"></a>
+                    <h1 style="margin-top: 13px; margin-left: 60px;">Top-up</h1>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" onclick="scrolltoRequest()"><img src="/photos/Request.png" alt="" id="img1"></a>
+                    <h1 style="margin-top: 22px; margin-left: 50px;">Request</h1>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" onclick="scrolltoQR()"><img src="/photos/topUpQr.png" alt="" id="img1"></a>
+                    <h1 style="margin-left: 50px;">QR Code</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="sendMoneyContainer">
+        <div class="col">
+            <div class="text-center">
+                <h1 style="font-size: 50px; margin-bottom: 80px;">Send Money <hr></h1>
+                <form id="sendMoneyForm">
+                    <div class="form-group">
+                        <label for="recipient-name">Recipient Name / Account ID</label>
+                        <input type="text" class="form-control" id="recipient-name" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" class="form-control" id="amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="warningSend()">Send Money</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="TopUpMoneyContainer">
+        <div class="col">
+            <div class="text-center">
+                <h1 style="font-size: 50px; margin-bottom: 60px;">Top-up Money</h1>
+                <h2>please fill in your card details. <hr>
+                </h2>
+                <form id="cardDetailsForm">
+                    <div class="form-group">
+                        <label for="cardholder-name">Cardholder Name</label>
+                        <input type="text" class="form-control" id="cardholder-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" class="form-control" id="card-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration-date">Expiration Date</label>
+                        <input type="text" class="form-control" id="expiration-date" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" class="form-control" id="amount1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="warningTopUp()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="requestMoneyContainer">
+        <div class="col">
+            <div class="text-center">
+                <h1 style="font-size: 50px;">
+                    Request
+                    <hr>
+                </h1>
+                <form id="requestMoneyForm">
+                    <div class="form-group">
+                        <label for="request-amount">Amount</label>
+                        <input type="number" class="form-control" id="request-amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="request-name">From: Name/Account ID</label>
+                        <input type="text" class="form-control" id="request-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="request-message">Message</label>
+                        <textarea class="form-control" id="request-message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Money</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="QRMoneyContainer">
+        <div class="col">
+            <div class="text-center">
+                <h1 style="font-size: 50px;">Top-up using QR <hr> </h1>
+                <div id="qr">
+                    <img src="/photos/Qrpayment.png" alt="" style="margin-top: 100px;">
+                    <p>your very own QR code for your wallet.</p>
+                </div>
+
+    
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+        
+    
+    <script>
+        let bal = 1000;
+        document.getElementById("balance").innerHTML = bal.toFixed(2);
+
+        document.getElementById("sendMoneyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let amount = parseFloat(document.getElementById("amount").value);
+            let name = document.getElementById("recipient-name").value;
+            if (amount > 0 && amount <= bal) {
+                bal -= amount;
+                document.getElementById("balance").innerHTML = bal.toFixed(2);
+                alert("Money sent to "+name+" successfully!");
+            } else {
+                alert("Invalid amount or insufficient balance.");
+            }
+        });
+
+        document.getElementById("cardDetailsForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let amount = parseFloat(document.getElementById("amount1").value);
+            if (amount > 0) {
+                bal += amount;
+                document.getElementById("balance").innerHTML = bal.toFixed(2);
+                alert("Top-up wallet successfully!");
+            } else {
+                alert("Invalid amount or insufficient balance in card.");
+            }
+        });
+
+
+
+        function scrollToSendMoney() {
+            document.getElementById("sendMoneyContainer").scrollIntoView({ behavior: 'smooth' });
+        };
+
+        function scrolltoTopUp() {
+            document.getElementById("TopUpMoneyContainer").scrollIntoView({behavior: 'smooth'});
+        };
+
+        function scrolltoRequest() { 
+            document.getElementById('requestMoneyContainer').scrollIntoView({behavior: "smooth"});
+        };
+
+        function scrolltoQR() {
+            document.getElementById('QRMoneyContainer').scrollIntoView({behavior: "smooth"});
+
+        };
+
+        function warningTopUp() {
+            alert("Are you sure you want to top-up?");
+        };
+        function warningSend() {
+            let name = document.getElementById("recipient-name").value;
+            alert("Are you sure you want to send to "+name+"?");
+        };
+
+
+    
+    </script>
+</body>
+</html>

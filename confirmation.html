@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/photos/Brand.png" alt="" id="brand">
+        </div>
+        <div class="navbar-nav">
+            <div class="row">
+                <a class="nav-item nav-link" href="/index.html"><b>Home </b></a>
+                <a class="nav-item nav-link" href="/support2.html"><b>Support </b></a>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="row">
+                <a class="nav-item nav-link" href="/signup.html"><b>Sign Up</b></a>
+                <a class="nav-item nav-link" href="/login.html"><b>Login</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="/photos/Brand.png" alt="" style="width: 100px; margin-bottom: 20px;" >
+                        <p>Confirm your phone number <br> Code sent to +65 4044 3456</p>
+                        <form action="/welcome.html" method="GET">
+                            <div class="form-group">
+                                <label for="auth-code">Authentication Code</label>
+                                <input type="text" class="form-control" id="auth-code" name="auth-code" placeholder="Enter code" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Verify</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="#">Resend code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
